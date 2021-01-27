@@ -1,0 +1,155 @@
+/* Primeiramente é uma boa prática remover qualquer espaçamento nativo. */
+
+
+/* O box-sizing impede que a propriedade padding extrapole a area permitida. */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Cor global de fundo. */
+    background: #e6ecf0;
+    /* Definição de fontes, se não tiver uma tenta a subsequente */
+    font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    /* Renderizando a fonte de forma menos "pixelizada"/suave */
+    text-rendering: optimizeLegibility !important;
+    -webki-font-smoothig: antialiased !important;
+}
+
+
+/* ************Estilizando Header************ */
+
+
+/* Remover qualquer outline de inpurt ou button */
+
+input,
+button {
+    outline: 0;
+}
+
+
+/* Centralizando todo o conteúdo no centro da tela */
+
+.content {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+
+/* Estilo global do header, renderizando os container lado a lado, definindo altura  e cor de fundo */
+
+header#main-header {
+    height: 46px;
+    background: #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .25);
+    /* O código abaixo faz com que o box-shadow fique por cima do banner */
+    position: relative;
+    z-index: 1;
+}
+
+header#main-header .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+
+/* Estilizando o primeiro container da esquerda para a direita, este container é uma lista com os 
+icones Home, Notifications e Message */
+
+header#main-header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+
+/* Estilizando conteúdo dentro da LI, alinhando os items, definindo espaçamento*/
+
+header#main-header nav ul li {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    color: #667580;
+    font-weight: bold;
+    margin-left: 30px;
+}
+
+
+/* No item anterrior não faz sentido a primeira imagem ter margen-left, o código abaixo 
+remove este atributo. */
+
+header#main-header nav ul li:first-child {
+    margin-left: 0px;
+}
+
+header#main-header nav ul li img {
+    margin-right: 7px;
+}
+
+
+/* Estilizando terceiro contaidner, ele contem a caixa de texto, avatar e botao "tweet" */
+
+header#main-header div.side {
+    display: flex;
+}
+
+
+/* Estilizando o Input */
+
+header#main-header div.side input {
+    width: 220px;
+    border: 1px solid #d6dcf0;
+    border-radius: 16px;
+    height: 34px;
+    padding: 0 30px 0 12px;
+    color: #667581;
+    font-size: 12px;
+    /* Tratando a lupinha do input con background e a largura do texto digitavel */
+    background: #f5f8fa url('images/search.svg') no-repeat 190px;
+}
+
+
+/* Estilizando o Avatar */
+
+header#main-header div.side img {
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+    margin: 0 15px;
+}
+
+
+/* Estilizando o Button */
+
+header#main-header div.side button {
+    /* Alinhando o texto ao centro do botão */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Estilizando font e largura do botão */
+    height: 34px;
+    background: #3bb9e3;
+    width: 90px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #fff;
+    border: 0px;
+    border-radius: 16px;
+}
+
+div.banner {
+    /* Ajusta dimensão e fundo do banner */
+    height: 380px;
+    width: 100%;
+    background: #3bb9e3;
+    /* Ajusta todo o conteúdo no centro da area do Banner */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
