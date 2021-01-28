@@ -45,7 +45,7 @@ button {
 header#main-header {
     height: 46px;
     background: #fff;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, .25);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
     /* O código abaixo faz com que o box-shadow fique por cima do banner */
     position: relative;
     z-index: 1;
@@ -152,4 +152,99 @@ div.banner {
     align-items: center;
     justify-content: center;
     color: #fff;
+}
+
+
+/* Estilizando o BAR */
+
+
+/* O box-shadow funciona da seguinte maneira
+1º valor é quantos pixels para a deireita a box-shadow tem que se posicionar.
+2º Verticalemente
+3º blurr, ou seja, quantos pixels irá se discipar.
+ */
+
+div.bar {
+    height: 59px;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+div.bar .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 285px;
+    height: 100%;
+}
+
+div.bar .content ul {
+    display: flex;
+    list-style: none;
+    height: 100%;
+}
+
+div.bar .content ul li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;
+    margin: 0 15px;
+    position: relative;
+}
+
+
+/* A propriedade ::after cria um efeito antes do elemento 
+fechar, ou seja, depois/em baixo do conteúdo da LI no caso. */
+
+div.bar .content ul li.active::after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #3bb9e3;
+}
+
+div.bar .content ul li span {
+    color: #667580;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+div.bar .content ul li strong {
+    color: #667580;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 2px;
+}
+
+div.bar .content ul li.active strong {
+    color: #3bb9e3;
+}
+
+
+/* Estilizando o botão Follow */
+
+div.bar .content .actions {
+    display: flex;
+}
+
+div.bar .content .actions button {
+    /* Alinhando o texto ao centro do botão */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Estilizando font e largura do botão */
+    background: #fff;
+    height: 34px;
+    width: 90px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #3bb9eb;
+    border: 1px solid #3bb9e3;
+    border-radius: 16px;
+    margin-right: 20px;
 }
