@@ -386,3 +386,69 @@ div.bar .content .actions button {
     flex: 1 0 auto;
     margin: 0 5px 5px 0;
 }
+
+
+/* Estilizando Coluna Lateral Direita (Who to Fallow) */
+
+
+/* O "flex-grow: 1;" ou "flex: 1;" faz com que o elemento, no 
+caso a area da timeline, ocupe toda area possível antes de quebrar.
+E por fim faz com que a coluna lateral direita fique totalemnte 
+na direita */
+
+.wrapper-content .timeline {
+    flex-grow: 1;
+}
+
+.wrapper-content aside.widgets {
+    width: 290px;
+    margin-top: 10px;
+}
+
+
+/* O "box-sizing: border-box;" difinido no inicio do documento 
+limita o padding à area interna, ou seja, não aumenta o 
+tamanho do elemento em questão */
+
+.wrapper-content aside.widgets .widget {
+    background: #fff;
+    padding: 15px;
+}
+
+
+/* O "align-items: baseline;" força o alinhamento do 
+texto na mesma linha. */
+
+.wrapper-content aside.widgets .widget .title {
+    display: flex;
+    align-items: baseline;
+}
+
+.wrapper-content aside.widgets .widget .title strong {
+    font-size: 18px;
+    color: #1f2226;
+}
+
+
+/* O "text-decoration: none;" remove o estilo automatico do link "a". */
+
+.wrapper-content aside.widgets .widget .title a {
+    color: #3bb9e3;
+    font-size: 12px;
+    text-decoration: none;
+    position: relative;
+    padding-left: 10px;
+}
+
+.wrapper-content aside.widgets .widget .title a::before {
+    content: '';
+    width: 1px;
+    height: 2px;
+    border-radius: 50%;
+    background: #222;
+    padding-left: 5px;
+    padding-right: 5px;
+    position: absolute;
+    left: 4px;
+    top: 6px;
+}
